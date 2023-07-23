@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCTracker.Models", "DCTracker.Models\DCTracker.Models.csproj", "{3DC48576-17F6-4845-B721-F517418E98EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCTracker.Domain", "DCTracker.Domain\DCTracker.Domain.csproj", "{B9FD1639-9D25-4BB5-B2EE-28A28441FB39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DC48576-17F6-4845-B721-F517418E98EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC48576-17F6-4845-B721-F517418E98EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC48576-17F6-4845-B721-F517418E98EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC48576-17F6-4845-B721-F517418E98EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9FD1639-9D25-4BB5-B2EE-28A28441FB39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9FD1639-9D25-4BB5-B2EE-28A28441FB39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9FD1639-9D25-4BB5-B2EE-28A28441FB39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9FD1639-9D25-4BB5-B2EE-28A28441FB39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {065F6739-EBA6-41E2-8C06-C94A826BCD4C}
+	EndGlobalSection
+EndGlobal

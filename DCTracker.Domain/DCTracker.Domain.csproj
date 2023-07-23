@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DCTracker.Models\DCTracker.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Campaign\" />
+    <Folder Include="User\" />
+  </ItemGroup>
+
+</Project>
