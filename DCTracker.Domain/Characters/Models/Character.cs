@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace DCTracker.Domain.Characters.Models
@@ -77,6 +79,25 @@ namespace DCTracker.Domain.Characters.Models
         }
 
         public string Id { get; set; } = Guid.NewGuid().ToString("n");
+        public string CharacterName { get; set; }
+        public string AlternateIdentity { get; set; }
+        public string Height { get; set; }
+        public string Weight { get; set; }
+        public string Age { get; set; }
+        public int Speed { get; set; }
+        public int TechLevel { get; set; }
+        public int CurrentCharacterPoints { get; set; }
+        public int TotalCharacterPoints { get; set; }
+        public int HeroPoints { get; set; }
+        public int VillianPoints { get; set; }
+        public int BodyPoints { get; set; }
+
+        public int BDV => CalculateBDV();
+        public int PDV => CalculatePDV();
+        public int LiftingBonus => CalculateLiftingBonus();
+
+        internal int PDVAdditives { get; set; }
+        internal int LiftingBonusAdditives { get; set; }
         internal bool IsCharacterFinished { get; set; } = false;
 
         #region Attributes
@@ -150,6 +171,24 @@ namespace DCTracker.Domain.Characters.Models
         public void FinishCharacterCreation()
         {
             IsCharacterFinished = true;
+        }
+
+        private int CalculatePDV()
+        {
+            return (int)Math.Ceiling((decimal)((new List<int>() { Reflexes.Value, Acrobatics.Value, Dodge.Value }.Max() + PDVAdditives) / 2));
+        }
+
+        private int CalculateLiftingBonus()
+        {
+            return (int)(Math.Floor((decimal)new List<int>() { Physique.Value, Lifting.Value }.Max()) / 2) + LiftingBonusAdditives;
+        }
+
+        private int CalculateBDV()
+        {
+            int defaultValue = Brawling.Value > 0 ? 2 : 1;
+            int attributeAdditive = LiftingBonus;
+            int brawlingValue = (int)Math.Floor((decimal)Brawling.Value / 3);
+            return defaultValue + attributeAdditive + brawlingValue;
         }
     }
 }
