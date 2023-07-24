@@ -79,6 +79,8 @@ namespace DCTracker.Domain.Characters.Models
         }
 
         public string Id { get; set; } = Guid.NewGuid().ToString("n");
+
+        #region Base Character Information
         public string CharacterName { get; set; }
         public string AlternateIdentity { get; set; }
         public string Height { get; set; }
@@ -98,6 +100,8 @@ namespace DCTracker.Domain.Characters.Models
 
         internal int PDVAdditives { get; set; }
         internal int LiftingBonusAdditives { get; set; }
+        #endregion
+
         internal bool IsCharacterFinished { get; set; } = false;
 
         #region Attributes
