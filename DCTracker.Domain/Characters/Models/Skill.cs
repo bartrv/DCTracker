@@ -15,7 +15,7 @@ namespace DCTracker.Domain.Characters.Models
         public string SkillName => _skill.SkillName();
 
         [Range(0, int.MaxValue, ErrorMessage = "Negative Number Not Allowed")]
-        public int Value { get; private set; }
+        public int Value { get; internal set; }
         public ImmutableDictionary<string,int> Specializations => _specializations.ToImmutableDictionary(e => e.Key, e => e.Value);
 
         public Skill(Character.Skills skill)
@@ -32,7 +32,8 @@ namespace DCTracker.Domain.Characters.Models
             _specializations = new Dictionary<string, int>();
         }
 
-        public void IncrementSkill()
+        //TODO: Does this need to move?
+        internal virtual void IncrementSkill()
         {
             Value++;
             foreach (string key in _specializations.Keys)
@@ -41,7 +42,8 @@ namespace DCTracker.Domain.Characters.Models
             }
         }
 
-        public void AddSpecialization(string specializationName, int specializationValue)
+        //TODO: Does this need to move?
+        internal virtual void AddSpecialization(string specializationName, int specializationValue)
         {
             if (_specializations.Keys.Any(k => string.Equals(k, specializationName, StringComparison.OrdinalIgnoreCase)))
             {
