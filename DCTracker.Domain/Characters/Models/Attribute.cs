@@ -8,13 +8,13 @@ namespace DCTracker.Domain.Characters.Models
 {
     public class Attribute
     {
-        private CharacterManager.Attributes _attribute { get; set; }
+        private Character.Attributes _attribute { get; set; }
         public string AttributeName => _attribute.ToString();
 
         [Range(0, int.MaxValue, ErrorMessage = "Negative Number Not Allowed")]
         public int Value { get; private set; }
 
-        public Attribute(CharacterManager.Attributes attribute, int value)
+        public Attribute(Character.Attributes attribute, int value)
         {
             _attribute = attribute;
             Value = value;
