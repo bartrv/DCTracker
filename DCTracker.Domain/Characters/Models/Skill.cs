@@ -36,25 +36,10 @@ namespace DCTracker.Domain.Characters.Models
         internal virtual void IncrementSkill()
         {
             Value++;
-            foreach (string key in _specializations.Keys)
-            {
-                _specializations[key] = _specializations[key] + 1;
-            }
         }
 
-        //TODO: Does this need to move?
         internal virtual void AddSpecialization(string specializationName, int specializationValue)
         {
-            if (_specializations.Keys.Any(k => string.Equals(k, specializationName, StringComparison.OrdinalIgnoreCase)))
-            {
-                throw new Exception("Specialization already exists");
-            }
-
-            if (specializationValue <= Value)
-            {
-                throw new Exception("Specialization must be higher than base skill value");
-            }
-
             _specializations.Add(specializationName, specializationValue);
         }
     }
